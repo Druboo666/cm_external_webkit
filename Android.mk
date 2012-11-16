@@ -430,6 +430,11 @@ endif
 # Build the library all at once
 include $(BUILD_STATIC_LIBRARY)
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 39ee174... libangle: build with -fno-strict-aliasing
 # Build ANGLE as a static library.
 include $(CLEAR_VARS)
 LOCAL_MODULE := libangle
@@ -444,10 +449,18 @@ LOCAL_SRC_FILES := $(addprefix Source/ThirdParty/ANGLE/src/compiler/,$(LOCAL_SRC
 LOCAL_C_INCLUDES := $(WEBKIT_C_INCLUDES) \
 	$(ANGLE_PATH)/include \
 	$(ANGLE_PATH)/src
+<<<<<<< HEAD
 LOCAL_CFLAGS += -Wno-error=non-virtual-dtor
 # Build libangle
 include $(BUILD_STATIC_LIBRARY)
 
+=======
+LOCAL_CFLAGS += -Wno-error=non-virtual-dtor -fno-strict-aliasing
+# Build libangle
+include $(BUILD_STATIC_LIBRARY)
+
+>>>>>>> 4a2b439... libangle: build with -fno-strict-aliasing
+>>>>>>> 39ee174... libangle: build with -fno-strict-aliasing
 # Now build the shared library using only the exported jni entry point. This
 # will strip out any unused code from the entry point.
 include $(CLEAR_VARS)
