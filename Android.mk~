@@ -430,6 +430,14 @@ endif
 # Build the library all at once
 include $(BUILD_STATIC_LIBRARY)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 39ee174... libangle: build with -fno-strict-aliasing
+=======
+>>>>>>> 5c51086... Android.mk: clean up noise left over from cherry-pick
 # Build ANGLE as a static library.
 include $(CLEAR_VARS)
 LOCAL_MODULE := libangle
@@ -444,14 +452,21 @@ LOCAL_SRC_FILES := $(addprefix Source/ThirdParty/ANGLE/src/compiler/,$(LOCAL_SRC
 LOCAL_C_INCLUDES := $(WEBKIT_C_INCLUDES) \
 	$(ANGLE_PATH)/include \
 	$(ANGLE_PATH)/src
+<<<<<<< HEAD
 LOCAL_CFLAGS += -Wno-error=non-virtual-dtor
 # Build libangle
 include $(BUILD_STATIC_LIBRARY)
 
+=======
 LOCAL_CFLAGS += -Wno-error=non-virtual-dtor -fno-strict-aliasing
 # Build libangle
 include $(BUILD_STATIC_LIBRARY)
 
+<<<<<<< HEAD
+>>>>>>> 4a2b439... libangle: build with -fno-strict-aliasing
+>>>>>>> 39ee174... libangle: build with -fno-strict-aliasing
+=======
+>>>>>>> 5c51086... Android.mk: clean up noise left over from cherry-pick
 # Now build the shared library using only the exported jni entry point. This
 # will strip out any unused code from the entry point.
 include $(CLEAR_VARS)
