@@ -444,13 +444,16 @@ LOCAL_SRC_FILES := $(addprefix Source/ThirdParty/ANGLE/src/compiler/,$(LOCAL_SRC
 LOCAL_C_INCLUDES := $(WEBKIT_C_INCLUDES) \
 	$(ANGLE_PATH)/include \
 	$(ANGLE_PATH)/src
+	
+LOCAL_CFLAGS += -Wno-error=non-virtual-dtor -fno-strict-aliasing
 LOCAL_CFLAGS += -Wno-error=non-virtual-dtor
+
 # Build libangle
 include $(BUILD_STATIC_LIBRARY)
 
 LOCAL_CFLAGS += -Wno-error=non-virtual-dtor -fno-strict-aliasing
 # Build libangle
-include $(BUILD_STATIC_LIBRARY)
+include $(BUILD_STATIC_LIBRARY) 
 
 # Now build the shared library using only the exported jni entry point. This
 # will strip out any unused code from the entry point.
